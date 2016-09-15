@@ -1,0 +1,10 @@
+
+
+<%= form_for @bid, url: user_product_bids_path( @user, @product) do |f| %>
+
+
+    Amount:
+    <%= f.text_field :amount %>
+    <%= f.submit %>
+
+<% end %>

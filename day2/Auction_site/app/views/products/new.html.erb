@@ -1,0 +1,42 @@
+
+
+<%= form_for([ @user, @product]) do |f| %>
+
+  <h2>New product: </h2>
+
+  <%= f.label :title  %>
+  <%= f.text_field :title %>
+
+  <br>
+  <br>
+
+  <%= f.label :description  %>
+  <%= f.text_area :description %>
+
+  <br>
+  <br>
+
+  <!-- <%= date_field("product", :deadline) %> -->
+
+  <!-- <%= date_select("product", "deadline", use_month_numbers: true, use_days_numbers: true ,start_year: 1995,
+                                   include_blank: true) %> -->
+
+  <%=date_field("product", :deadline, min: Date.today)%>
+
+  <br>
+  <br>
+
+
+
+  <div class="field">
+  <%= f.label :user_id %><br>
+  <%=  @user.name%>
+</div>
+
+
+  <br>
+  <br>
+
+
+  <%= f.submit %>
+<% end %>
